@@ -10,6 +10,7 @@ import {
   StyleSheet,
   Image,
   ScrollView,
+  Platform,
 } from "react-native";
 
 interface JustForYouProps {
@@ -72,13 +73,13 @@ const JustForYou: React.FC<JustForYouProps> = ({ data }) => {
 
   return (
     <View style={styles.container}>
-      {/* <ScrollView
+      <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.tabsContainer}
       >
         {tabs.map((tab) => renderTabItem(tab))}
-      </ScrollView> */}
+      </ScrollView>
       <FlatList
         data={filteredData}
         renderItem={renderDonationItem}
@@ -110,7 +111,7 @@ const styles = StyleSheet.create({
     borderBottomColor: Colors.primary,
   },
   tabText: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     color: "#777",
   },
   activeTabText: {
@@ -136,11 +137,11 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   title: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     fontWeight: "bold",
   },
   amountNeeded: {
-    fontSize: 18,
+    fontSize: Platform.OS === "android" ? 14 : 18,
     color: "#888",
   },
 });

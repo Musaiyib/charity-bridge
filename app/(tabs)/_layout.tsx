@@ -9,6 +9,7 @@ import {
   Ionicons,
   MaterialIcons,
 } from "@expo/vector-icons";
+import { Platform } from "react-native";
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -19,7 +20,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: Colors.primary,
         tabBarInactiveTintColor: Colors[colorScheme ?? "light"].tabIconDefault,
         tabBarStyle: {
-          height: 100,
+          height: Platform.OS === "android" ? 60 : 100,
         },
         tabBarIconStyle: {
           marginTop: 10,

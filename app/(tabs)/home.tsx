@@ -135,19 +135,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingVertical: 30,
+    paddingVertical: Platform.OS === "android" ? 0 : 30,
     marginTop: Platform.OS === "android" ? 40 : 0,
     marginBottom: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#f1f1f1",
     paddingHorizontal: 20,
+    paddingBottom: 20,
   },
   title: {
-    fontSize: 40,
+    fontSize: Platform.OS === "android" ? 30 : 40,
     fontWeight: "bold",
   },
   subTitle: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     fontWeight: "500",
     marginTop: 5,
   },
@@ -172,7 +173,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 10,
     height: "100%",
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 18 : 20,
   },
   areasContainer: {
     paddingLeft: 10,
@@ -189,7 +190,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D0D0FF",
   },
   areaButtonText: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     color: "#000000",
   },
   selectedAreaButtonText: {

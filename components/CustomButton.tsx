@@ -1,5 +1,5 @@
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { TouchableOpacity, Text, StyleSheet, Platform } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { router } from "expo-router"; // Assuming you have router imported from expo-router
 
@@ -19,7 +19,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({ onPress, title }) => {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: Colors.primary,
-    paddingVertical: 15,
+    paddingVertical: Platform.OS === "android" ? 10 : 15,
     paddingHorizontal: 0,
     borderRadius: 10,
     position: "absolute",

@@ -1,7 +1,14 @@
 import { donationData } from "@/dummyData";
 import { Donation } from "@/types";
 import React from "react";
-import { View, Text, Image, StyleSheet, FlatList } from "react-native";
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  FlatList,
+  Platform,
+} from "react-native";
 
 const TopPrograms = () => {
   const renderItem = ({ item }: { item: Donation }) => (
@@ -15,9 +22,9 @@ const TopPrograms = () => {
     <View style={{}}>
       <Text
         style={{
-          fontSize: 22,
+          fontSize: Platform.OS === "android" ? 18 : 22,
           fontWeight: "800",
-          marginTop: 15,
+          marginTop: Platform.OS === "android" ? 12 : 15,
           marginLeft: 20,
         }}
       >
@@ -45,11 +52,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 10,
     gap: 5,
-    width: 350,
-    height: 250,
+    width: Platform.OS === "android" ? 330 : 350,
+    height: Platform.OS === "android" ? 230 : 250,
   },
   title: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     fontWeight: "bold",
     marginBottom: 5,
   },

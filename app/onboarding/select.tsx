@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Platform,
+} from "react-native";
 import { router } from "expo-router";
 import CustomButton from "@/components/CustomButton";
 import { Colors } from "@/constants/Colors";
@@ -110,7 +116,7 @@ const styles = StyleSheet.create({
     marginTop: 40,
   },
   title: {
-    fontSize: 44,
+    fontSize: Platform.OS === "android" ? 35 : 44,
     fontWeight: "bold",
     textAlign: "center",
   },
@@ -118,14 +124,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   subtitle: {
-    fontSize: 22,
+    fontSize: Platform.OS === "android" ? 18 : 22,
     textAlign: "center",
   },
   areasContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "center",
-    marginTop: 40,
+    marginTop: Platform.OS === "android" ? 30 : 40,
     marginBottom: 20,
   },
   areaButton: {
@@ -139,7 +145,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#D0D0FF",
   },
   areaButtonText: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 15 : 20,
     color: "#000000",
   },
   selectedAreaButtonText: {

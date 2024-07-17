@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  Platform,
+} from "react-native";
 import CustomSafeAreaView from "@/components/UI/CustomSafeAreaView";
 import TopBar from "@/components/UI/TopBar";
 import { Colors } from "@/constants/Colors";
@@ -70,8 +77,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   image: {
-    width: "100%",
-    height: 250,
+    width: Platform.OS === "android" ? "20%" : "100%",
     resizeMode: "contain",
     marginTop: 10,
     marginBottom: 20,
@@ -80,7 +86,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     marginBottom: 50,
-    alignItems: "center", // Align items in center horizontally
+    alignItems: "center",
   },
   link: {
     marginTop: 20,

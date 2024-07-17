@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Platform,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors"; // Assuming you have a Colors file
 import CustomSafeAreaView from "@/components/UI/CustomSafeAreaView";
@@ -125,8 +132,8 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   profileImage: {
-    width: 180,
-    height: 180,
+    width: Platform.OS === "android" ? 160 : 180,
+    height: Platform.OS === "android" ? 160 : 180,
     borderRadius: 80,
     marginTop: 30,
   },
@@ -143,17 +150,17 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   congratulationsText: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     fontWeight: "bold",
   },
   subtitleText: {
-    fontSize: 18,
+    fontSize: Platform.OS === "android" ? 14 : 18,
     color: "#888",
     marginBottom: 10,
     marginTop: 5,
   },
   donationsText: {
-    fontSize: 24,
+    fontSize: Platform.OS === "android" ? 18 : 24,
     color: Colors.primary,
     fontWeight: "bold",
     marginTop: 25,
@@ -194,12 +201,12 @@ const styles = StyleSheet.create({
     borderRadius: 99,
   },
   statValue: {
-    fontSize: 28,
+    fontSize: Platform.OS === "android" ? 20 : 28,
     fontWeight: "bold",
     marginBottom: 5,
   },
   statLabel: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     color: "#888",
     marginBottom: 10,
     textAlign: "left",
@@ -215,17 +222,17 @@ const styles = StyleSheet.create({
     elevation: 1,
   },
   impactTitle: {
-    fontSize: 20,
+    fontSize: Platform.OS === "android" ? 16 : 20,
     fontWeight: "bold",
     marginBottom: 10,
   },
   impactHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 20,
+    marginBottom: Platform.OS === "android" ? 12 : 20,
   },
   impactSubtitle: {
-    fontSize: 14,
+    fontSize: Platform.OS === "android" ? 12 : 14,
     color: "#333",
   },
   impactDetail: {
@@ -234,11 +241,11 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   impactDetailText: {
-    fontSize: 16,
+    fontSize: Platform.OS === "android" ? 14 : 16,
     fontWeight: "600",
   },
   impactDetailPercentage: {
-    fontSize: 16,
+    fontSize: Platform.OS === "android" ? 14 : 16,
     fontWeight: "600",
   },
   progressBarBackground: {
@@ -249,7 +256,7 @@ const styles = StyleSheet.create({
   },
   progressBarFill: {
     height: "100%",
-    width: "55%", // This should be dynamic based on percentage
+    width: "55%",
     backgroundColor: Colors.primary,
     borderRadius: 5,
   },
