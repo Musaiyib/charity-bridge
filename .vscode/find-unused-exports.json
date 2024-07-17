@@ -1,0 +1,21 @@
+{
+  "ignore": {
+    "files": [
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/components/UI/NavigationTopBar.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(tabs)/home.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(tabs)/notification.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(tabs)/profile.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/index.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/onboarding/select.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/onboarding/welcome.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/hooks/useColorScheme.web.ts",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/hooks/useThemeColor.ts",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/.expo/types/router.d.ts",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/_layout.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(auth)/login.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(auth)/signup.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(tabs)/_layout.tsx",
+      "c:/Users/Developer/Desktop/SkooolPay/Charity-Bridge/app/(tabs)/activity.tsx"
+    ]
+  }
+}
