@@ -1,29 +1,19 @@
-import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import CustomSafeAreaView from "@/components/UI/CustomSafeAreaView";
+import { Colors } from "@/constants/Colors";
+import React from "react";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 const NotificationScreen = () => {
-  const [amount, setAmount] = useState("");
-
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>
-        California Ends Strict Virus Restrictions
-      </Text>
-      <Text style={styles.amount}>$190.00</Text>
-      <Text style={styles.daysLeft}>15 days left</Text>
-      <TextInput
-        placeholder="Enter the amount"
-        value={amount}
-        onChangeText={setAmount}
-        style={styles.input}
-      />
-      <View style={styles.buttonGroup}>
-        <Button title="$5.00" onPress={() => setAmount("5.00")} />
-        <Button title="$15.00" onPress={() => setAmount("15.00")} />
-        <Button title="$25.00" onPress={() => setAmount("25.00")} />
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.contentContainer}
+    >
+      <CustomSafeAreaView />
+      <View style={styles.viewText}>
+        <Text style={styles.text}>Coming soon</Text>
       </View>
-      <Button title={`Donate $${amount}`} onPress={() => {}} />
-    </View>
+    </ScrollView>
   );
 };
 
@@ -33,28 +23,20 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     flex: 1,
   },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
+  contentContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  amount: {
-    fontSize: 18,
-    fontWeight: "bold",
+  viewText: {
+    backgroundColor: Colors.primary,
+    padding: 10,
+
+    borderRadius: 10,
   },
-  daysLeft: {
-    marginBottom: 20,
-  },
-  input: {
-    borderWidth: 1,
-    padding: 8,
-    marginVertical: 10,
-    borderRadius: 8,
-  },
-  buttonGroup: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginBottom: 20,
+  text: {
+    color: "#fff",
+    fontSize: 20,
   },
 });
 

@@ -2,23 +2,21 @@
 
 buildscript {
     ext {
-        buildToolsVersion = findProperty('android.buildToolsVersion') ?: '34.0.0'
+        buildToolsVersion = findProperty('android.buildToolsVersion') ?: '35.0.0'
         minSdkVersion = Integer.parseInt(findProperty('android.minSdkVersion') ?: '23')
-        compileSdkVersion = Integer.parseInt(findProperty('android.compileSdkVersion') ?: '34')
-        targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '34')
+        compileSdkVersion = Integer.parseInt(findProperty('android.compileSdkVersion') ?: '35')
+        targetSdkVersion = Integer.parseInt(findProperty('android.targetSdkVersion') ?: '35')
         kotlinVersion = findProperty('android.kotlinVersion') ?: '1.9.23'
-
-        // ndkVersion = "26.1.10909125"
-        ndkVersion = "27.0.12077973"
+        ndkVersion = "26.1.10909125"
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath('com.android.tools.build:gradle')
-        classpath('com.facebook.react:react-native-gradle-plugin')
-        classpath('org.jetbrains.kotlin:kotlin-gradle-plugin')
+        classpath 'com.android.tools.build:gradle:7.2.0'  // Ensure you're using a compatible Gradle plugin version
+        classpath 'com.facebook.react:react-native-gradle-plugin'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
@@ -34,7 +32,6 @@ allprojects {
             // Android JSC is installed from npm
             url(new File(['node', '--print', "require.resolve('jsc-android/package.json', { paths: [require.resolve('react-native/package.json')] })"].execute(null, rootDir).text.trim(), '../dist'))
         }
-
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }

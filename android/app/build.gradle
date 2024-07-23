@@ -83,7 +83,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.musaiyib.CharityBridge'
+    namespace "com.charitybridge"
     defaultConfig {
         applicationId 'com.musaiyib.CharityBridge'
         minSdkVersion rootProject.ext.minSdkVersion
