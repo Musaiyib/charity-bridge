@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.musaiyib.CharityBridge"
+      "bundleIdentifier": "com.musaiyib.charitybridge"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.musaiyib.CharityBridge"
+      "package": "com.musaiyib.charitybridge"
     },
     "web": {
       "bundler": "metro",
